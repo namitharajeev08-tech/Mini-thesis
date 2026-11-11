@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run phase_fraction_ml",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/phase_fraction_ml.py",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}
