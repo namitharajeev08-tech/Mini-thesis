@@ -44,7 +44,6 @@ pip install numpy pandas scikit-learn matplotlib xlrd openpyxl
 pip install scikit-optimize   # or bayesian-optimization / botorch
 ```
 
-> **Note:** Reading legacy `.xls` files with pandas requires `xlrd`.
 
 ### Usage
 
