@@ -8,14 +8,6 @@
 
 Designing bainitic steels means finding alloy compositions that produce the right microstructure: bainitic ferrite with retained austenite, while avoiding unwanted phases such as cementite, pearlite or martensite. Searching this space with experiments or full thermodynamic calculations alone is slow and expensive.
 
-This project takes an **inverse design** approach:
-
-1. **Forward problem (surrogate model):** Train machine-learning models on CALPHAD-based equilibrium phase data. The models predict phase constitution (phase fractions) from alloy composition (and temperature).
-2. **Inverse problem (Bayesian optimization):** Use the trained surrogate as a fast, cheap objective function. Bayesian optimization then searches composition space for alloys that meet target phase-fraction criteria for bainitic microstructures.
-
-Using the surrogate in place of repeated thermodynamic calculations makes the search much faster. The probabilistic optimizer also balances exploring new regions of composition space against refining compositions that already look promising.
-
----
 
 ## Repository Structure
 
@@ -39,26 +31,6 @@ Mini-thesis/
 
 ## Methodology
 
-### 1. Data Generation
-- Equilibrium phase fractions were computed with CALPHAD for 128 compositions. <!-- TODO: software, database -->
-- **Input features:** alloying element contents in wt.% <!-- TODO: e.g. C, Si, Mn, Cr, Mo, Ni, Al … --> and temperature <!-- TODO: range -->
-- **Targets:** equilibrium fractions of the relevant phases <!-- TODO: e.g. FCC_A1 (austenite), BCC_A2 (ferrite), cementite, carbides … -->
-
-### 2. Surrogate Modeling
-- Preprocessing: <!-- TODO: e.g. scaling, train/test split ratio, cross-validation -->
-- Models evaluated: <!-- TODO: e.g. Gaussian Process Regression, Random Forest, Gradient Boosting, Neural Network -->
-- Evaluation metrics: R², MAE, RMSE <!-- TODO: confirm -->
-
-### 3. Bayesian Optimization (Inverse Design)
-- **Objective:** find compositions that maximize/minimize <!-- TODO: e.g. retained austenite fraction, suppression of cementite --> subject to composition constraints
-- **Surrogate within BO:** <!-- TODO: e.g. Gaussian Process -->
-- **Acquisition function:** <!-- TODO: e.g. Expected Improvement / UCB -->
-- **Design space bounds:** <!-- TODO: element ranges -->
-
-### 4. Validation
-- The proposed compositions are checked against CALPHAD calculations and metallurgical knowledge of bainitic steels, such as the T₀ concept and how Si suppresses cementite. <!-- TODO -->
-
----
 
 ## Getting Started
 
@@ -98,13 +70,6 @@ Results are written to `ml_results/`.
 
 ## Roadmap
 
-- [x] Generate equilibrium phase dataset
-- [x] Train surrogate models for phase fraction prediction
-- [ ] Implement Bayesian optimization loop for inverse design
-- [ ] Validate optimized compositions with CALPHAD
-- [ ] Extend to kinetic descriptors (e.g. Bs/Ms temperatures, T₀)
-
-<!-- TODO: tick off what's done -->
 
 ---
 
