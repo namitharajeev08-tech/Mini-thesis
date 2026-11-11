@@ -80,14 +80,6 @@ Results are written to `ml_results/`.
 - B. Shahriari et al., "Taking the Human Out of the Loop: A Review of Bayesian Optimization," *Proc. IEEE*, 104(1), 2016.
 -->
 
----
-
-## License
-
-<!-- TODO: e.g. MIT, or "All rights reserved – academic work" -->
-
----
-
 ## Contact
 
 **Namitha Rajeev**
